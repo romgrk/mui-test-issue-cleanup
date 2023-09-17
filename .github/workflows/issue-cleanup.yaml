@@ -16,21 +16,13 @@ jobs:
       - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         with:
           script: |
-            const comments = await github.rest.issues.listComments({
+            const issue = await github.rest.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
 
-            console.log(comments);
-            if (comments.length > 0) {
-              const comment = comments[0];
-              console.log(comment);
-              // const result = await octokit.rest.issues.updateComment({
-              //   owner: context.repo.owner,
-              //   repo: context.repo.repo,
-              //   comment_id: comment.id,
-              //   body,
-              // });
-              console.log(result)
-            }
+            const text =
+              '### Duplicates\n\n- [X] I have searched the existing issues\n\n### Latest version\n\n- [X] I have tested the latest version\n\n';
+
+            console.log(issue);
