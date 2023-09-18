@@ -52,7 +52,7 @@ jobs:
             })
 
             function extractInputSection(lines, title) {
-              const index = lines.findIndex(line => line.startsWith('###') && line.includes(titles))
+              const index = lines.findIndex(line => line.startsWith('###') && line.includes(title))
               if (index === -1) {
                 return ''
               }
