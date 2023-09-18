@@ -24,13 +24,6 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: contact
-    attributes:
-      label: Order ID or Support key 💳 (optional)
-      description: The [Pro plan](https://mui.com/pricing/) comes with priority over the Community plan. Providing your order ID (or support key) gives your problem more attention.
-      placeholder: 'e.g. 11111'
-
   - type: textarea
     attributes:
       label: Steps to reproduce 🕹
@@ -70,3 +63,9 @@ body:
           Output from `npx @mui/envinfo` goes here.
         ```
         </details>
+  - type: input
+    id: contact
+    attributes:
+      label: Order ID or Support key 💳 (optional)
+      description: The [Pro plan](https://mui.com/pricing/) comes with priority over the Community plan. Providing your order ID (or support key) gives your problem more attention.
+      placeholder: 'e.g. 11111'
