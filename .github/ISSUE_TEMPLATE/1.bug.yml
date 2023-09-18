@@ -32,7 +32,7 @@ body:
 
         Please provide a link to a live example and an unambiguous set of steps to reproduce this bug. As a starting point, we recommend you [browse the documentation](https://mui.com/x/introduction/), and [select](https://mui.com/static/docs/forking-an-example.png) the closest example to your use case. Or you can use a [basic template](https://mui.com/r/x-issue-template) to build your reproduction case.
       value: |
-        Link to live example:
+        Link to live example: (required)
 
         Steps:
         1.
