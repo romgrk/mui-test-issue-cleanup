@@ -1,0 +1,35 @@
+name: Update missing translations
+
+on:
+  push:
+    branches:
+      - master
+      - next
+
+permissions: {}
+
+jobs:
+  # Tests dev-only scripts across all supported dev environments
+  update-l10n:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - run: echo "${{ github.actor }}"
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: 18
+          cache: 'yarn' # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-dependencies
+      - run: yarn install
+        env:
+          # Don't need playwright in this job
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+      - name: yarn l10n --report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote -v
+          yarn l10n --report
