@@ -20,19 +20,29 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-            });
-
-            const latestVersion = '### Latest version\r?\n\r?\n- [X] I have tested the latest version\r?\n\r?\n';
-            const searchKeywordsPattern = /### Search keywords\r?\n\r?\n\s*(.*)\r?\n\r?\n/;
-            const searchKeywords = issue.data.body.match(searchKeywordsPattern)?.[1] ?? '';
+            })
 
             console.log(JSON.stringify(issue.data.body))
 
-            const body =
-              issue.data.body
-                .replace(latestVersion, '')
-                .replace(searchKeywordsPattern, '')
-              + '\n\n**Search keywords**: ' + searchKeywords;
+            const lines = issue.data.body.split('\n')
+
+            const _ = extractInputSection(lines, 'Latest version')
+            const searchKeywords = extractInputSection(lines, 'Search keywords')
+            const orderID = extractInputSection(lines, 'Order ID or Support Key')
+
+            lines.push('')
+            if (orderID !== '') {
+              lines.push('**Order ID**: ' + orderID)
+            }
+            lines.push('**Search keywords**: ' + searchKeywords)
+
+            console.log({
+              lines,
+              searchKeywords,
+              orderID,
+            })
+
+            const body = lines.join('\n')
 
             await github.rest.issues.update({
               owner: context.repo.owner,
@@ -40,3 +50,11 @@ jobs:
               issue_number: context.issue.number,
               body,
             })
+
+            function extractInputSection(lines, title) {
+              const index = lines.findIndex(line => line.startsWith('###') && line.includes(titles))
+              if (index === -1) {
+                return ''
+              }
+              return lines.splice(index, 4)[2].trim()
+            }
