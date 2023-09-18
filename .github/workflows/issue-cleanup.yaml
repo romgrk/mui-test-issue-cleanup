@@ -29,10 +29,10 @@ jobs:
             const orderID = extractInputSection(lines, 'Order ID or Support key')
 
             lines.push('')
-            if (orderID !== '') {
+            lines.push('**Search keywords**: ' + searchKeywords)
+            if (orderID !== '' && orderID !== '_No response_') {
               lines.push('**Order ID**: ' + orderID)
             }
-            lines.push('**Search keywords**: ' + searchKeywords)
 
             console.log({
               lines,
