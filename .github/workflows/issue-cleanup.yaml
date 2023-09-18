@@ -22,8 +22,8 @@ jobs:
               issue_number: context.issue.number,
             });
 
-            const latestVersion = '### Latest version\r\n\r\n- [X] I have tested the latest version\r\n\r\n';
-            const searchKeywordsPattern = /### Search keywords\r\n\r\n\s*(.*)\r\n\r\n/;
+            const latestVersion = '### Latest version\r?\n\r?\n- [X] I have tested the latest version\r?\n\r?\n';
+            const searchKeywordsPattern = /### Search keywords\r?\n\r?\n\s*(.*)\r?\n\r?\n/;
             const searchKeywords = issue.data.body.match(searchKeywordsPattern)?.[1] ?? '';
 
             console.log(JSON.stringify(issue.data.body))
@@ -32,7 +32,7 @@ jobs:
               issue.data.body
                 .replace(latestVersion, '')
                 .replace(searchKeywordsPattern, '')
-              + '\r\n\r\n**Search keywords**: ' + searchKeywords;
+              + '\n\n**Search keywords**: ' + searchKeywords;
 
             await github.rest.issues.update({
               owner: context.repo.owner,
