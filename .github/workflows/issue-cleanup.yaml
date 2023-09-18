@@ -28,7 +28,7 @@ jobs:
 
             const _ = extractInputSection(lines, 'Latest version')
             const searchKeywords = extractInputSection(lines, 'Search keywords')
-            const orderID = extractInputSection(lines, 'Order ID or Support Key')
+            const orderID = extractInputSection(lines, 'Order ID or Support key')
 
             lines.push('')
             if (orderID !== '') {
