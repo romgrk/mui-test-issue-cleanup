@@ -25,6 +25,15 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: contact
+    attributes:
+      label: Order ID or Support key 💳 (optional)
+      description: The order ID of the purchased Pro plan. Community users can [learn more about support](https://mui.com/getting-started/support/) in the documentation.
+      placeholder: 'e.g. 11111'
+    validations:
+      required: true
+
   - type: textarea
     attributes:
       label: The problem in depth 🔍
@@ -41,13 +50,3 @@ body:
           Output from `npx @mui/envinfo` goes here.
         ```
         </details>
-
-  - type: input
-    id: contact
-    attributes:
-      label: Order ID or Support key 💳 (optional)
-      description: The order ID of the purchased Pro plan. Community users can [learn more about support](https://mui.com/getting-started/support/) in the documentation.
-      placeholder: 'e.g. 11111'
-    validations:
-      required: true
-
