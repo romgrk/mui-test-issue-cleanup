@@ -11,8 +11,8 @@ body:
   - type: input
     attributes:
       label: Search keywords
-      description: Which keywords did you use to search for duplicates? Please [search the history](https://github.com/mui/mui-x/issues) to see if an issue already exists for the same problem.
-      placeholder: ex. datagrid column resizing
+      description: Your issue may already have been reported. Please list the keywords you've used to search the [existing issues](https://github.com/mui/mui-x/issues). This will allow us to improve the experience for other users.
+      placeholder: e.g. datagrid column resizing
     validations:
       required: true
   - type: checkboxes
@@ -26,6 +26,11 @@ body:
   - type: textarea
     attributes:
       label: The problem in depth 🔍
+      description: |
+        If you're reporting a bug, please provide a live example for your report. You can fork one of these templates:
+          - [DataGrid](https://codesandbox.io/s/github/mui/mui-x/tree/master/templates/x-data-grid)
+
+        You can also fork any of the code examples in our [documentation](https://mui.com/x/introduction/) by [clicking on the codesandbox or stackblitx icon](https://mui.com/static/docs/forking-an-example.png).
   - type: textarea
     attributes:
       label: Your environment 🌎

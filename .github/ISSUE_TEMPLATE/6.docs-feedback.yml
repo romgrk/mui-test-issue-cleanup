@@ -13,8 +13,8 @@ body:
   - type: input
     attributes:
       label: Search keywords
-      description: Which keywords did you use to search for duplicates? Please [search the history](https://github.com/mui/mui-x/issues) to see if an issue already exists for the same problem.
-      placeholder: ex. datagrid column resizing
+      description: Your issue may have already been reported. Please list the keywords you've used to search the [existing issues](https://github.com/mui/mui-x/issues). This will allow us to improve the experience for other users.
+      placeholder: e.g. datagrid column resizing
     validations:
       required: true
 
