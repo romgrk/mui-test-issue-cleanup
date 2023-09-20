@@ -31,7 +31,7 @@ body:
         **⚠️ Issues that we can't reproduce will be closed.**
 
         Please provide a live example for your report. You can fork one of these templates:
-          - [DataGrid](https://codesandbox.io/s/github/mui/mui-x/tree/master/templates/x-data-grid)
+          - [DataGrid](https://codesandbox.io/s/github/romgrk/mui-test-issue-cleanup/tree/master/templates/x-data-grid)
 
         You can also fork any of the code examples in our [documentation](https://mui.com/x/introduction/) by [clicking on the codesandbox or stackblitx icon](https://mui.com/static/docs/forking-an-example.png).
       value: |
