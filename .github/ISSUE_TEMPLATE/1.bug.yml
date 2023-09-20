@@ -28,9 +28,7 @@ body:
     attributes:
       label: Steps to reproduce 🕹
       description: |
-        **⚠️ Issues that we can't reproduce will be closed.**
-
-        Please provide a live example for your report. If you don't have one, you can use one of these options:
+        **⚠️ Please provide a live example for your report.** If you don't have one, you can use one of these options:
           - [DataGrid template](https://codesandbox.io/s/github/romgrk/mui-test-issue-cleanup/tree/master/templates/x-data-grid?file=demo.tsx)
           - Fork any of the examples in our [documentation](https://mui.com/x/introduction/) by [clicking on the codesandbox or stackblitz icon](https://mui.com/static/docs/forking-an-example.png)
       value: |
